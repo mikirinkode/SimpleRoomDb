@@ -7,7 +7,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.mikirinkode.roomgame2.databinding.CustomRowBinding
 import com.mikirinkode.roomgame2.model.GameEntity
-import kotlinx.android.synthetic.main.custom_row.view.*
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
@@ -33,7 +32,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         val game = gameList[position]
         holder.bind(game)
 
-        holder.itemView.rowLayout.setOnClickListener {
+        holder.itemView.setOnClickListener {
             val action = ListFragmentDirections.actionListFragmentToUpdateFragment(game)
             holder.itemView.findNavController().navigate(action)
         }
